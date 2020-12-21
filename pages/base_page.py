@@ -2,6 +2,12 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 import math
 
+with open('urls.txt', 'r') as file:
+    URLs = []
+    for url in file:
+        url = url.strip('\n')
+        URLs.append(url)
+
 
 class BasePage():
     def __init__(self, browser, url, timeout=10):

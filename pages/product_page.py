@@ -10,11 +10,11 @@ class ProductPage(BasePage):
     def product_name_correct(self):
         product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
         message_product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_MESSAGE_NAME).text
-        assert product_name in message_product_name, \
+        assert product_name == message_product_name, \
             f'Product name in message must be {product_name}, but {message_product_name}'
 
     def product_price_correct(self):
         product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
         message_product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_MESSAGE_PRICE).text
-        assert product_price in message_product_price, \
+        assert product_price == message_product_price, \
             f'Product price in basket must be {product_price}, but {message_product_price}'
