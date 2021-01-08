@@ -6,12 +6,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from .locators import BasePageLocators
 
-with open('urls.txt', 'r') as file:
-    URLs = []
-    for url in file:
-        url = url.strip('\n')
-        URLs.append(url)
-
 
 class BasePage:
     def __init__(self, browser, link, timeout=10):
